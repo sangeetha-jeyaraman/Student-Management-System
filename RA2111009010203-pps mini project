@@ -87,31 +87,6 @@ void find_with_fn()
 	  printf("Student's CGPA: %.2f\n", st[i].CGPA); c=1; 
 	} else printf("First name not found\n");
     }}
-void find_with_cid()
-{
-  int cid,j,d;
-  printf("Enter the course ID:\n");
-  scanf("%d", &cid);
-  for (j=1;j<=i;j++){
-      for (d=0;d<5;d++)
-    {
-      if(cid==st[j].courseid[d])
-	{
-	  printf("The student's details are:\n");
-	  printf("Student's first name: %s\n", st[i].fname);
-	  printf("Student's last name: %s\n", st[i].lname);
-	  printf("Student's gender: %s\n", st[i].gender);
-	  printf("Student's roll number: %d\n", st[i].rollno);
-	  printf("Student's contact number: %s\n", st[i].phoneno);
-	  printf("Student's address: %s\n", st[i].add);
-	  printf("Course ID of each course chosen by student:\n");
-	  for (j=0;j<5;j++)
-	    {
-	      printf("%d\n", st[i].courseid[j]);
-	    }
-	  printf("Student's CGPA: %.2f\n", st[i].CGPA);
-	}
-    }}}
 void update_std()
 {
      int rn; int j;
@@ -184,10 +159,9 @@ void main()
     printf("1.Add student's details\n");
     printf("2.Find student's details through roll number\n");
     printf("3.Find student's details through first name\n");
-    printf("4.Find student's details through course ID\n");
-    printf("5.Update student's details\n");
-    printf("6.Delete student's details\n");
-    printf("7.Exit\n");
+    printf("4.Update student's details\n");
+    printf("5.Delete student's details\n");
+    printf("6.Exit\n");
     printf("Choice:\n");
     scanf("%d",&choice);
     switch(choice){
@@ -201,15 +175,12 @@ void main()
         find_with_fn();
         break;
         case 4:
-        find_with_cid();
-        break;
-        case 5:
         update_std();
         break;
-        case 6:
+        case 5:
         delete_std();
         break;
-        case 7:
+        case 6:
         exit(0);
         break;
     }
